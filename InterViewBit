@@ -1,0 +1,39 @@
+int* spiralOrder(const int** A, int n11, int n12, int *len1) {
+
+
+int i,Top=0,Bottom=n11-1,Left=0,Right=n12-1;
+int dir=0,count=0;
+*len1=n11*n12;
+int *a =(int*)malloc (*len1*sizeof (int)); /* n is the length of the array */
+    while(Top<=Bottom && Left<=Right)
+    {
+        if(dir==0)
+        {
+            for(i=Left;i<=Right;i++){a[count]=A[Top][i];count++;}
+            Top++;
+            dir=1;
+        }
+        else if(dir==1)
+        {
+            for(i=Top;i<=Bottom;i++){a[count]=A[i][Right];count++;}
+            Right--;
+            dir=2;
+        }
+        else if(dir==2)
+        {
+            for(i=Right;i>=Left;i--){ a[count]=A[Bottom][i];count++;}
+            Bottom--;
+            dir=3;
+        }
+        else if(dir==3)
+        {
+        for(i=Bottom;i>=Top;i--){ a[count]=A[i][Left];count++;}
+            Left++;
+            dir=0;
+        }
+    } 
+    return a;
+}
+
+
+any doubt go to youtube ,type print 2d array in spiral order 
