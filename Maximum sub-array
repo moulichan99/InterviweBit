@@ -1,0 +1,15 @@
+int maxSubArray(const int* A, int n1) {
+int i,ans=INT_MIN,sum=0; //assign minimum number to ans variable 
+for(i=0;i<n1;i++)
+{
+    sum=sum+A[i];  // adding no to sum variable 
+    if(sum>ans)    // check with ans variable which id maximum 
+        ans=sum;      
+    if(sum<0)      // if it is -ve make sum to 0 
+        sum=0;
+}
+return ans;    
+}
+
+
+for any refernce KADANE ALGORITHM in GEEKSFORGEEKS  / mycodeschools.com - maximum continious subarray  
